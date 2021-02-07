@@ -10,16 +10,6 @@ class EventsIndex extends React.Component {
     this.props.readEvents()
   }
 
-  renderEvnets(){
-    return _.map(this.props.events, event => (
-      <tr key={event.id}>
-        <td>{event.id}</td>
-        <td>{event.title}</td>
-        <td>{event.body}</td>
-      </tr>
-    ))
-  }
-
   render(){
     return (
       <React.Fragment>
@@ -39,6 +29,16 @@ class EventsIndex extends React.Component {
         <Link to="/events/new">New Event</Link>
       </React.Fragment>
     )
+  }
+
+  renderEvnets(){
+    return _.map(this.props.events, event => (
+      <tr key={event.id}>
+        <td>{event.id}</td>
+        <td>{event.title}</td>
+        <td>{event.body}</td>
+      </tr>
+    ))
   }
 }
 
